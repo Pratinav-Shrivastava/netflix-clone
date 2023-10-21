@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="app">
       {/* Navbar */}
-      {/* Banner */}
       <Banner/>
       <Row title="NETFLIX ORIGINALS" 
         fetchURL={requests.fetchNetflixOriginals}
