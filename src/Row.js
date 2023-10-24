@@ -37,7 +37,7 @@ function Row({ title, fetchURL, isLargeRow }) {
       movieTrailer(movie?.name || "")
         .then((url) => {
           // https://www.youtube.com/watch?v=dfjjwmFrLB0
-          const urlParams = new URLSearchParams(new URL(url).search())
+          const urlParams = new URLSearchParams(new URL(url).search)
           setTrailerUrl(urlParams.get("v"))
         })
         .catch((error) => console.log(error))
@@ -61,7 +61,11 @@ function Row({ title, fetchURL, isLargeRow }) {
           />
         ))}
       </div>
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      {/* console.log({trailerUrl}) */}
+      <div>
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+        {/* {{trailerUrl} && <YouTube videoId='dfjjwmFrLB0' opts={opts} />} */}
+      </div>
     </div>
   )
 }
